@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.BinarySearchTrees;
+package com.mpalambonisi.datastructures.binarySearchTrees;
 
 public class BinarySearchTree {
     Node root = null;
