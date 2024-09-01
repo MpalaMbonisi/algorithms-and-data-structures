@@ -1,7 +1,6 @@
 package com.mpalambonisi.datastructures.hashTables;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.*;
 
 public class LeetCodeEx {
 
@@ -28,5 +27,33 @@ public class LeetCodeEx {
             if(myHashMap.put(n,true)!=null && !myList.contains(n)) myList.add(n);
         }
         return myList;
+    }
+
+    // implementation of groupAnagrams()
+    // An anagram is a word or phrase formed by rearranging the letters of a different word or phrase
+    // typically using all the original letters exactly once.
+    public List<List<String>> groupAnagrams(String[] inputString){
+
+        HashMap<String, List<String>> myHashMap = new HashMap<>();
+
+        for (String s: inputString) {
+            // sort the string
+            char[] chars = s.toCharArray();
+            Arrays.sort(chars); // sorted alphabetically
+            // sortedString is in the canonical form of the String,
+            // meaning all anagrams will have the same 'sortedString'
+            String sortedString = new String(chars);
+
+            // checking for anagrams
+            if (myHashMap.containsKey(sortedString)){
+                myHashMap.get(sortedString).add(s); // .add adds the anagram to the list
+            }
+            else { // handling new anagrams
+                List<String> group = new ArrayList<>();
+                group.add(s);
+                myHashMap.put(sortedString, group);
+            }
+        }
+        return new ArrayList<>(myHashMap.values());
     }
 }

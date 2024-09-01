@@ -22,5 +22,15 @@ public class LeetCodeExDemo {
         System.out.println("Duplicates found in nums3 : " + leetCodeEx.findDuplicates(nums3));;
         System.out.println("Duplicates found in nums4 : " + leetCodeEx.findDuplicates(nums4));;
 
+        // groupAnagrams() demonstration
+        System.out.println("\n------------------- groupAnagrams() ---------------------\n");
+        System.out.println("1st set:");
+        System.out.println(leetCodeEx.groupAnagrams(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}));
+
+        System.out.println("\n2nd set:");
+        System.out.println(leetCodeEx.groupAnagrams(new String[]{"abc", "cba", "bac", "foo", "bar"}));
+
+        System.out.println("\n3rd set:");
+        System.out.println(leetCodeEx.groupAnagrams(new String[]{"listen", "silent", "triangle", "integral", "garden", "ranged"}));
     }
 }
