@@ -1,5 +1,7 @@
 package com.mpalambonisi.datastructures.hashTables;
 
+import com.mpalambonisi.datastructures.singlyLinkedLists.LinkedListsDemo;
+
 import java.util.*;
 
 public class LeetCodeEx {
@@ -56,4 +58,43 @@ public class LeetCodeEx {
         }
         return new ArrayList<>(myHashMap.values());
     }
+
+    // twoSum() implementation
+    public int[] twoSum(int[] nums, int target){
+        HashMap<Integer, Integer> numMap = new HashMap<>();
+        for (int i=0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (numMap.containsKey(complement)){
+                return new int[] {numMap.get(complement), i};
+            }
+            else {
+                numMap.put(nums[i], i);
+            }
+        }
+        return new int[0];
+    }
+    /*
+     *** Subarray Sum
+     * This challenge requires writing a method named `subarraySum` that takes an array of integers `nums`
+     * and an integer `target`.The goal is to find the starting and ending indices of a contiguous subarray
+     * within `nums` that adds up to the given `target` sum.
+     */
+    public int[] subArraySum(int[] nums, int target){
+        HashMap<Integer, Integer> sumIndex = new HashMap<>(); // key -> total sum value -> index
+        sumIndex.put(0,-1);
+        int currentSum = 0;
+        for(int i=0; i<nums.length;i++){
+            currentSum += nums[i];
+            if (sumIndex.containsKey(currentSum - target)){
+                int firstIndex = currentSum - target;
+                firstIndex++;
+                return new int[] {firstIndex, i};
+            }
+            else{
+                sumIndex.put(currentSum,i);
+            }
+        }
+        return new int[]{,};
+    }
+
 }
