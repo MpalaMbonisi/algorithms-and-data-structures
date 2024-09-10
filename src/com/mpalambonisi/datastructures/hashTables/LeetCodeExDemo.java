@@ -1,6 +1,7 @@
 package com.mpalambonisi.datastructures.hashTables;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class LeetCodeExDemo {
     public static void main(String[] args) {
@@ -65,5 +66,30 @@ public class LeetCodeExDemo {
         int target4 = 0;
         int[] result4 = leetCodeEx.subArraySum(array04, target4);
         System.out.println("[]");
+
+        // removeDuplicates() implementation
+        System.out.println("\n------------------- removeDuplicates() ---------------------\n");
+        List<Integer> myList = List.of(1, 2, 3, 4, 1, 2, 5, 6, 7, 3, 4, 8, 9, 5);
+        List<Integer> newList = leetCodeEx.removeDuplicates(myList);
+        System.out.println(newList);
+
+        // hasUniqueChars() implementation
+        System.out.println("\n------------------- hasUniqueChars() ---------------------\n");
+        System.out.println(leetCodeEx.hasUniqueChars("abcdefg")); // should return true
+        System.out.println(leetCodeEx.hasUniqueChars("hello")); // should return false
+        System.out.println(leetCodeEx.hasUniqueChars("")); // should return true
+        System.out.println(leetCodeEx.hasUniqueChars("0123456789")); // should return true
+        System.out.println(leetCodeEx.hasUniqueChars("abacadaeaf")); // should return false
+
+        // findPairs() implementation
+        System.out.println("\n------------------- findPairs() ---------------------\n");
+        int[] arr1 = {1, 2, 3, 4, 5};
+        int[] arr2 = {2, 4, 6, 8, 10};
+        int target = 7;
+
+        List<int[]> pairs = leetCodeEx.findPairs(arr1, arr2, target);
+        for (int[] pair : pairs) {
+            System.out.println(Arrays.toString(pair));
+        }
     }
 }

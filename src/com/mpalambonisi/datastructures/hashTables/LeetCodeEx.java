@@ -75,19 +75,19 @@ public class LeetCodeEx {
     }
     /*
      *** Subarray Sum
-     * This challenge requires writing a method named `subarraySum` that takes an array of integers `nums`
-     * and an integer `target`.The goal is to find the starting and ending indices of a contiguous subarray
+     * This challenge requires writing a method named `subarraySum`
+     * that takes an array of integers `nums` and an integer `target`.
+     * The goal is to find the starting and ending indices of a contiguous subarray
      * within `nums` that adds up to the given `target` sum.
      */
     public int[] subArraySum(int[] nums, int target){
-        HashMap<Integer, Integer> sumIndex = new HashMap<>(); // key -> total sum value -> index
+        HashMap<Integer, Integer> sumIndex = new HashMap<>(); // { key -> total sum, value -> index }
         sumIndex.put(0,-1);
         int currentSum = 0;
         for(int i=0; i<nums.length;i++){
             currentSum += nums[i];
             if (sumIndex.containsKey(currentSum - target)){
-                int firstIndex = currentSum - target;
-                firstIndex++;
+                int firstIndex = sumIndex.get(currentSum - target) + 1;
                 return new int[] {firstIndex, i};
             }
             else{
@@ -95,6 +95,54 @@ public class LeetCodeEx {
             }
         }
         return new int[]{,};
+    }
+
+    /*
+        *** Remove Duplicates
+        * You are given a list of integers, myList, where some elements may be repeated.
+        * Your task is
+        * to write a Java method that removes all duplicate elements from the list
+        * and returns a new list containing only the unique elements.
+     */
+    public List<Integer> removeDuplicates(List<Integer> myList){
+        Set<Integer> uniqueSet = new HashSet<>(myList);
+        return new ArrayList<>(uniqueSet);
+    }
+
+    /*
+        *** hasUniqueChars
+        * Write a Java program to determine if a given string contains all unique characters or not.
+    */
+    public boolean hasUniqueChars (String string){
+        char[] charArray = string.toCharArray();
+        Set<Character> charSet = new HashSet<>();
+        for (char c:charArray) {
+            if (charSet.contains(c)){
+                return false;
+            }
+            charSet.add(c);
+        }
+        return true;
+    }
+
+    /*
+        *** findPairs()
+        * Given two integer arrays arr1 and arr2, and an integer target,
+        * write a method named findPairs
+        * that finds all pairs of integers such that one integer is from arr1,
+        * the other is from arr2, and their sum equals the target value.
+     */
+    public List<int[]> findPairs(int[] arr1, int[] arr2, int target){
+        List<int[]> pairs = new ArrayList<>();
+        Set<Integer> set4Arr1 = new HashSet<>();
+        for (int num : arr1) {
+            set4Arr1.add(num);
+        }
+        for (int num: arr2) {
+            int diff = target - num;
+            if (set4Arr1.contains(diff)) pairs.add(new int[] {diff, num});
+        }
+        return pairs;
     }
 
 }
