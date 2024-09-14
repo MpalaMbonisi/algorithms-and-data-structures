@@ -91,5 +91,27 @@ public class LeetCodeExDemo {
         for (int[] pair : pairs) {
             System.out.println(Arrays.toString(pair));
         }
+
+        // longestConsecutiveSequence() implementation
+        System.out.println("\n------------------- longestConsecutiveSequence() ---------------------\n");
+        int[] seq01 = new int[] {1, 2, 3, 4, 5};
+        int[] seq02 = new int[] {1, 3, 5, 7, 9};
+        int[] seq03 = new int[] {1, 2, 2, 3, 4};
+        int[] seq04 = new int[] {1, 0, -1, -2, -3};
+        int[] seq05 = new int[] {1, 2, 3, 10, 11, 12, 13};
+        int[] seq06 = new int[] {5, 1, 3, 4, 2};
+        int[] seq07 = new int[] {1};
+        int[] seq08 = new int[] {};
+        int[] seq09 = new int[] {2, 2, 2, 2, 2};
+
+        System.out.println("Longest Seq 1 : " + leetCodeEx.longestConsecutiveSequence(seq01));
+        System.out.println("Longest Seq 2 : " + leetCodeEx.longestConsecutiveSequence(seq02));
+        System.out.println("Longest Seq 3 : " + leetCodeEx.longestConsecutiveSequence(seq03));
+        System.out.println("Longest Seq 4 : " + leetCodeEx.longestConsecutiveSequence(seq04));
+        System.out.println("Longest Seq 5 : " + leetCodeEx.longestConsecutiveSequence(seq05));
+        System.out.println("Longest Seq 6 : " + leetCodeEx.longestConsecutiveSequence(seq06));
+        System.out.println("Longest Seq 7 : " + leetCodeEx.longestConsecutiveSequence(seq07));
+        System.out.println("Longest Seq 8 : " + leetCodeEx.longestConsecutiveSequence(seq08));
+        System.out.println("Longest Seq 9 : " + leetCodeEx.longestConsecutiveSequence(seq09));
     }
 }

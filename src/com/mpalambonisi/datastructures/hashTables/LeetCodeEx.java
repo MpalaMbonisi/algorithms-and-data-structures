@@ -145,4 +145,41 @@ public class LeetCodeEx {
         return pairs;
     }
 
+    /*
+          *** longestConsecutiveSequence
+          * Given an unsorted array of integers,
+          *  write a function that finds the length of the longestConsecutiveSequence
+          * (i.e., a sequence of integers in which each element is one greater than the previous element).
+     */
+    public int longestConsecutiveSequence(int [] nums){
+        if (nums.length == 0) return 0;
+        int diff = 0; // common difference
+        int prevNum = 0; // previous number
+        int counter = 0;
+        Set<Integer> countersSet = new HashSet<>();
+
+        for (int i=0; i < nums.length; i++){
+            if (i==0) {
+                prevNum = nums[i];
+                counter = 1;
+                continue;
+            }
+            if(nums[i] == prevNum) continue;
+            if (diff != (nums[i] - prevNum) && counter > 1){
+                countersSet.add(counter);
+                counter = 0;
+            }
+            diff = nums[i] - prevNum;
+            prevNum = nums[i];
+            counter++;
+        }
+        countersSet.add(counter);
+
+        // check return largest counter
+        int largestCounter=0;
+        for (Integer c : countersSet) {
+            if( c > largestCounter) largestCounter = c;
+        }
+        return largestCounter;
+    }
 }
