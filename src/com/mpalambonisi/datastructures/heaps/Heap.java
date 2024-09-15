@@ -4,6 +4,11 @@ import java.util.List;
 
 public abstract class Heap {
     protected static List<Integer> heap;
+
+    public List<Integer> getHeap() {
+        return heap;
+    }
+
     public abstract void insert(int value);
     public abstract Integer remove();
     public void printHeap(){
