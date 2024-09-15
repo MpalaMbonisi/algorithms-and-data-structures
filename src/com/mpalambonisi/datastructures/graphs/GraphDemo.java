@@ -11,7 +11,7 @@ public class GraphDemo {
         myGraph.printGraph();
 
         // addEdge() demonstration
-        System.out.println("\n----------------------- addVertex() demo -----------------------\n");
+        System.out.println("\n----------------------- addEdge() demo -----------------------\n");
         myGraph.addVertex("C");
         myGraph.addEdge("A", "B");
         myGraph.addEdge("A","C");
