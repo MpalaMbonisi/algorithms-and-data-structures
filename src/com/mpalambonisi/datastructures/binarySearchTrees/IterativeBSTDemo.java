@@ -21,6 +21,7 @@ public class IterativeBSTDemo {
         System.out.println("Root -> Right : " + myBST.getRoot().right.value);
 
         // contains() demonstration
+        System.out.println("\n----------------- contains() iterative demo ---------------------\n");
         myBST.insert(47);
         myBST.insert(21);
         myBST.insert(76);
