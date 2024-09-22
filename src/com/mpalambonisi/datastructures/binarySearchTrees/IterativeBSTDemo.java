@@ -1,8 +1,8 @@
 package com.mpalambonisi.datastructures.binarySearchTrees;
 
-public class BinarySearchTreeDemo {
+public class IterativeBSTDemo {
     public static void main(String[] args) {
-        BinarySearchTree myBST = new BinarySearchTree();
+        IterativeBST myBST = new IterativeBST();
         System.out.println("Root : " + myBST.getRoot());
 
         // insert() demonstration
