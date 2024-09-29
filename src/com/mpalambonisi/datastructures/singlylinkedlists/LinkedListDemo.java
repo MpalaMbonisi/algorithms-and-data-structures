@@ -1,9 +1,9 @@
 package com.mpalambonisi.datastructures.singlylinkedlists;
 
-public class LinkedListsDemo {
+public class LinkedListDemo {
     public static void main(String[] args) {
 
-        LinkedLists myLinkedList = new LinkedLists(4);
+        LinkedList myLinkedList = new LinkedList(4);
         myLinkedList.printList();
 
         // append() demonstration

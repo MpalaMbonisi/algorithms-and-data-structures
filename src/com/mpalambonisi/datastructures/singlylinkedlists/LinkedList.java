@@ -1,6 +1,6 @@
 package com.mpalambonisi.datastructures.singlylinkedlists;
 
-public class LinkedLists {
+public class LinkedList {
     private Node head;
     private Node tail;
     private int length;
@@ -13,7 +13,7 @@ public class LinkedLists {
         }
     }
 
-    public LinkedLists (int value){
+    public LinkedList(int value){
         Node newNode = new Node(value);
         head = newNode;
         tail = newNode;
@@ -146,6 +146,25 @@ public class LinkedLists {
             temp.next = before;
             before = temp;
             temp = after;
+        }
+    }
+
+    // implementation of Bubble-Sort Algorithm
+    public void bubbleSort(){
+        if (length < 2) return;
+        Node sortedUntil = null;
+
+        while(this.head.next != sortedUntil){
+            Node currentNode = head;
+            while (currentNode.next != sortedUntil){
+                if (currentNode.value > currentNode.next.value){
+                    int temp = currentNode.value;
+                    currentNode.value = currentNode.next.value;
+                    currentNode.next.value = temp;
+                }
+                currentNode = currentNode.next;
+            }
+            sortedUntil = currentNode;
         }
     }
 
