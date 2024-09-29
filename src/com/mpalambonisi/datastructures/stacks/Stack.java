@@ -1,6 +1,4 @@
-package com.mpalambonisi.datastructures.stacksAndQueues;
-
-import java.util.ArrayList;
+package com.mpalambonisi.datastructures.stacks;
 
 public class Stack {
     private Node top;

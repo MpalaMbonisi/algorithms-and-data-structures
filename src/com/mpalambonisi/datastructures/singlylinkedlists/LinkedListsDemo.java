@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.singlyLinkedLists;
+package com.mpalambonisi.datastructures.singlylinkedlists;
 
 public class LinkedListsDemo {
     public static void main(String[] args) {

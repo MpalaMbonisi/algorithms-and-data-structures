@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.stacksAndQueues;
+package com.mpalambonisi.datastructures.queues;
 
 public class Queue {
     private Node first;

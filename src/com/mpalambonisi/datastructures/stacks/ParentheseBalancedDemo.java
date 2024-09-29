@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.stacksAndQueues;
+package com.mpalambonisi.datastructures.stacks;
 
 public class ParentheseBalancedDemo {
     private static boolean isBalancedParentheses(String str){

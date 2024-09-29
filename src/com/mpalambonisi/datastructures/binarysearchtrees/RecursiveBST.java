@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.binarySearchTrees;
+package com.mpalambonisi.datastructures.binarysearchtrees;
 
 public class RecursiveBST extends BinarySearchTree{
     // insert() implementation

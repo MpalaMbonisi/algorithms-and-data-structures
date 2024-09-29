@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.hashTables;
+package com.mpalambonisi.datastructures.hashtables;
 
 import java.util.ArrayList;
 

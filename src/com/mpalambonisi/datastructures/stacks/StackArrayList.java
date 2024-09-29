@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.stacksAndQueues;
+package com.mpalambonisi.datastructures.stacks;
 
 import java.util.ArrayList;
 // ---------------- Stack that uses an ArrayList ------------------------

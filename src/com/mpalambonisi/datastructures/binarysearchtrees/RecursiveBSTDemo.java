@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.binarySearchTrees;
+package com.mpalambonisi.datastructures.binarysearchtrees;
 
 public class RecursiveBSTDemo {
     public static void main(String[] args) {

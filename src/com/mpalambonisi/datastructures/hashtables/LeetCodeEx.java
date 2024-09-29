@@ -1,6 +1,4 @@
-package com.mpalambonisi.datastructures.hashTables;
-
-import com.mpalambonisi.datastructures.singlyLinkedLists.LinkedListsDemo;
+package com.mpalambonisi.datastructures.hashtables;
 
 import java.util.*;
 

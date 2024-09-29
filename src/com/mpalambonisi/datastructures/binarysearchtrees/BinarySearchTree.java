@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.binarySearchTrees;
+package com.mpalambonisi.datastructures.binarysearchtrees;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

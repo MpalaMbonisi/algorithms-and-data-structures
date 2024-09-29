@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.doublyLinkedLists;
+package com.mpalambonisi.datastructures.doublylinkedlists;
 
 public class DoublyLinkedLists {
     private Node head;

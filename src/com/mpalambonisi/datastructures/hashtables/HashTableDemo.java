@@ -1,4 +1,4 @@
-package com.mpalambonisi.datastructures.hashTables;
+package com.mpalambonisi.datastructures.hashtables;
 
 public class HashTableDemo {
     public static void main(String[] args) {
