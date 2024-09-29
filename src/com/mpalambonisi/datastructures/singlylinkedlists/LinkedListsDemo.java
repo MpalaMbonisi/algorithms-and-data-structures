@@ -1,6 +1,6 @@
 package com.mpalambonisi.datastructures.singlylinkedlists;
 
-public class LinkedListDemo {
+public class LinkedListsDemo {
     public static void main(String[] args) {
 
         LinkedList myLinkedList = new LinkedList(4);

@@ -168,6 +168,32 @@ public class LinkedList {
         }
     }
 
+    // implementation Selection Sort
+    public void selectionSort(){
+        if (length < 2) return;
+        Node currentNode = this.head;
+
+        while(currentNode.next != null){
+            Node smallest = currentNode;
+            Node innerCurrent = currentNode.next;
+
+            while(innerCurrent != null){
+                if (innerCurrent.value < smallest.value){
+                    smallest = innerCurrent;
+                }
+                innerCurrent = innerCurrent.next;
+            }
+            if (smallest != currentNode) {
+                int temp = smallest.value;
+                smallest.value = currentNode.value;
+                currentNode.value = temp;
+            }
+            currentNode = currentNode.next;
+        }
+    }
+
+
+
     public void printList(){
         Node temp=head;
         while(temp!=null){

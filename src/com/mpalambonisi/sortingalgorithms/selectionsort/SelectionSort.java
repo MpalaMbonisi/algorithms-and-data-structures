@@ -1,4 +1,6 @@
 package com.mpalambonisi.sortingalgorithms.selectionsort;
+import com.mpalambonisi.datastructures.singlylinkedlists.LinkedList;
+
 import java.util.Arrays;
 /*
  * Selection Sort Time Complexity:
@@ -31,11 +33,29 @@ public class SelectionSort {
         }
     }
     public static void main(String[] args) {
+
+        // array demonstration
+        System.out.println("\n -------- Array demonstration of Selection Sort -------- \n");
         int [] myArray = {4, 2, 6, 5, 1, 3};
         System.out.print("\nBefore selection-sort : ");
         System.out.println(Arrays.toString(myArray));
         selectionSort(myArray);
         System.out.print("\nAfter selection-sort  : ");
         System.out.println(Arrays.toString(myArray));
+
+        // linked-list demonstration
+        System.out.println("\n -------- Linked-List demonstration of Selection Sort -------- \n");
+        LinkedList myLinkedList = new LinkedList(4);
+        myLinkedList.append(2);
+        myLinkedList.append(6);
+        myLinkedList.append(5);
+        myLinkedList.append(1);
+        myLinkedList.append(3);
+
+        System.out.println("Unsorted Linked List : ");
+        myLinkedList.printAll();
+        myLinkedList.selectionSort();
+        System.out.println("\nSorted Linked List   : ");
+        myLinkedList.printAll();
     }
 }
