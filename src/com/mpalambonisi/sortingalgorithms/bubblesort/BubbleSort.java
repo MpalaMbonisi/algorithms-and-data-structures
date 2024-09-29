@@ -1,4 +1,4 @@
-package com.mpalambonisi.sortingalgorithms.BubbleSort;
+package com.mpalambonisi.sortingalgorithms.bubblesort;
 import java.util.Arrays;
 /*
  * Bubble Sort Time Complexity:
