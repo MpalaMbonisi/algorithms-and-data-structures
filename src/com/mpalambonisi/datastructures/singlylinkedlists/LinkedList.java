@@ -168,7 +168,7 @@ public class LinkedList {
         }
     }
 
-    // implementation Selection Sort
+    // implementation of Selection Sort
     public void selectionSort(){
         if (length < 2) return;
         Node currentNode = this.head;
@@ -192,7 +192,48 @@ public class LinkedList {
         }
     }
 
+    // implementation of Insertion Sort
+    public void insertionSort() {
+        // If the list has less than 2 elements, no need to sort, so return
+        if (length < 2) return;
 
+        // Split the list into two parts: sorted and unsorted
+        Node sortedListHead = this.head;
+        Node unsortedListHead = this.head.next;
+        sortedListHead.next = null; // Mark the end of the sorted part
+        tail = sortedListHead; // The tail is now the last element of the sorted part
+
+        // Iterate over the unsorted part of the list
+        while (unsortedListHead != null) {
+
+            if (unsortedListHead.value < sortedListHead.value) {
+                Node temp = unsortedListHead;
+                unsortedListHead = unsortedListHead.next;
+                temp.next = sortedListHead;
+                sortedListHead = temp; // Update the head of the sorted list
+            } else {
+                // Otherwise, search for the correct position in the sorted list
+                Node searchPointer = sortedListHead;
+
+                // Move through the sorted part until the correct position is found
+                while (searchPointer.next != null && searchPointer.next.value < unsortedListHead.value) {
+                    searchPointer = searchPointer.next;
+                }
+
+                // Insert the unsorted node at the correct position in the sorted list
+                Node temp = unsortedListHead;
+                unsortedListHead = unsortedListHead.next;
+                temp.next = searchPointer.next;
+                searchPointer.next = temp;
+
+                // If the node is inserted at the end, update the tail reference
+                if (temp.next == null) tail = temp;
+            }
+        }
+
+        // Update the head of the list to the new sorted list head
+        head = sortedListHead;
+    }
 
     public void printList(){
         Node temp=head;
