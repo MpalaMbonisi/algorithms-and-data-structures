@@ -50,10 +50,10 @@ public class BubbleSort {
         myLinkedList.append(1);
         myLinkedList.append(3);
 
-        System.out.print("Unsorted Linked List : ");
-        myLinkedList.printList();
+        System.out.println("Unsorted Linked List : ");
+        myLinkedList.printAll();
         myLinkedList.bubbleSort();
-        System.out.print("\nSorted Linked List   : ");
-        myLinkedList.printList();
+        System.out.println("\nSorted Linked List   : ");
+        myLinkedList.printAll();
     }
 }
