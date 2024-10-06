@@ -235,6 +235,33 @@ public class LinkedList {
         head = sortedListHead;
     }
 
+    // implemented a method that merges two LinkedLists
+    public void merge(LinkedList otherList){
+        Node otherHead = otherList.getHead();
+        Node dummy = new Node(0);
+        Node current = dummy;
+
+        while(this.head != null && otherHead != null){
+            if (this.head.value < otherHead.value) {
+                current.next = this.head;
+                this.head = this.head.next;
+            }
+            else{
+                current.next = otherHead;
+                otherHead = otherHead.next;
+            }
+            current = current.next;
+        }
+        if (head != null) {
+            current.next = this.head;
+        }else {
+            current.next = otherHead;
+            this.tail = otherList.tail;
+        }
+        this.head = dummy.next;
+        this.length += otherList.length;
+    }
+
     public void printList(){
         Node temp=head;
         while(temp!=null){
