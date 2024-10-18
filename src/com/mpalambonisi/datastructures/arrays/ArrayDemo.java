@@ -21,5 +21,8 @@ public class ArrayDemo {
 
         System.out.println("\n--------- Rotate Test ---------\n");
         arrayTesting.rotateTest();
+
+        System.out.println("\n--------- Max Sub Array Test ---------\n");
+        arrayTesting.maxSubArrayTest();
     }
 }
