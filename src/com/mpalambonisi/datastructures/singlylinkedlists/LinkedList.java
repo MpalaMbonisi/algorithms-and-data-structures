@@ -1,5 +1,7 @@
 package com.mpalambonisi.datastructures.singlylinkedlists;
 
+import java.util.HashSet;
+
 public class LinkedList {
     private Node head;
     private Node tail;
@@ -42,6 +44,10 @@ public class LinkedList {
 
     public void setLength(int length) {
         this.length = length;
+    }
+    public void makeEmpty() {
+        head = null;
+        length = 0;
     }
 
     public void append(int value){
@@ -136,16 +142,16 @@ public class LinkedList {
     }
 
     public void reverse(){
-        Node temp = head;
+        Node current = head;
         head = tail;
-        tail = temp;
-        Node after = temp.next;
+        tail = current;
+        Node after = current.next;
         Node before = null;
         for (int i =0; i < length; i++){
-            after = temp.next;
-            temp.next = before;
-            before = temp;
-            temp = after;
+            after = current.next;
+            current.next = before;
+            before = current;
+            current = after;
         }
     }
 
@@ -288,7 +294,7 @@ public class LinkedList {
         }
     }
 
-    //          ------ LEECODE EXERCISE QUESTIONS --------
+    // Leetcode exercise questions
     public Node findMiddleNode(){
         if (head == null) return null;
 
@@ -335,5 +341,84 @@ public class LinkedList {
         }
         return slow;
     }
+    // The partitionList method aims:
+    //    - to rearrange nodes in a singly linked list based on a given integer value x.
+    public void partitionList(int x){
+        if (head == null) return;
 
+        Node dummy01 = new Node(0);
+        Node dummy02 = new Node(0);
+        Node prev01 = dummy01;
+        Node prev02 = dummy02;
+        Node current = head;
+
+        while(current != null){
+            if (current.value < x){
+                prev01.next = current;
+                prev01 = prev01.next;
+            }else{
+                prev02.next = current;
+                prev02 = prev02.next;
+            }
+            current = current.next;
+        }
+
+        prev02.next = null;
+        prev01.next = dummy02.next;
+
+        head = dummy01.next;
+    }
+
+    public void removeDuplicates(){
+        HashSet<Integer> uniqueValues = new HashSet<>();
+        Node currentNode = head;
+        Node prevNode = null;
+
+        while(currentNode != null){
+            if(uniqueValues.contains(currentNode.value)){
+                prevNode.next = currentNode.next;
+                length--;
+            }
+            else{
+                uniqueValues.add(currentNode.value);
+                prevNode = currentNode;
+            }
+            currentNode = currentNode.next;
+        }
+    }
+    public int binaryToDecimal(){
+        int decimalNum = 0;
+        int pow = length - 1;
+        Node currentNode = head;
+
+        while(currentNode != null){
+            decimalNum += (int) (currentNode.value * Math.pow(2,pow));
+            currentNode = currentNode.next;
+            pow--;
+        }
+        return decimalNum;
+    }
+
+    public void reverseBetween(int startIndex, int endIndex) {
+        if (head == null) return;
+
+        Node dummyNode = new Node(0);
+        dummyNode.next = head;
+        Node prevNode = dummyNode;
+
+        for (int i=0; i < startIndex; i++) {
+            prevNode = prevNode.next;
+        }
+
+        Node currentNode = prevNode.next;
+
+        for(int i = 0; i < endIndex - startIndex; i++){
+            Node nodeToMove = currentNode.next;
+            currentNode.next = nodeToMove.next;
+            nodeToMove.next = prevNode.next;
+            prevNode.next = nodeToMove;
+        }
+
+        head = dummyNode.next;
+    }
 }
