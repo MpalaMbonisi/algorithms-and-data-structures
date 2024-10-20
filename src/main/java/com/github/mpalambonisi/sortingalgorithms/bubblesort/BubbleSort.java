@@ -1,5 +1,5 @@
 package com.github.mpalambonisi.sortingalgorithms.bubblesort;
-import com.github.mpalambonisi.datastructures.singlylinkedlists.LinkedList;
+import com.github.mpalambonisi.datastructures.singlylinkedlist.LinkedList;
 
 import java.util.Arrays;
 /*

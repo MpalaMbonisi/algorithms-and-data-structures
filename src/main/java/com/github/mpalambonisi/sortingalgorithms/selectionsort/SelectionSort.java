@@ -1,5 +1,5 @@
 package com.github.mpalambonisi.sortingalgorithms.selectionsort;
-import com.github.mpalambonisi.datastructures.singlylinkedlists.LinkedList;
+import com.github.mpalambonisi.datastructures.singlylinkedlist.LinkedList;
 
 import java.util.Arrays;
 /*
