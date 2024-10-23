@@ -21,14 +21,8 @@ package com.github.mpalambonisi.recursion;
 
 
 public class Factorial {
-    private static int factorial(int value){
+    public static int factorial(int value){
         if (value == 1) return 1;
         return value * factorial(value - 1);
-    }
-    public static void main(String[] args) {
-        int fac = factorial(5);
-        System.out.println("5! = " + fac);
-        fac = factorial(10);
-        System.out.println("10! = " + fac);
     }
 }

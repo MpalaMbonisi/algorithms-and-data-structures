@@ -29,14 +29,8 @@ public class QuickSort {
         quickSortHelper(array, pivotIndex + 1, right);
     }
 
-    private static void quickSort(int[] array){
+    public static void sort(int[] array){
+        if (array.length == 0) return;
         quickSortHelper(array, 0, array.length - 1);
-    }
-    public static void main(String[] args) {
-        int[] myArray = {4,6,1,7,3,2,5};
-
-        quickSort(myArray);
-
-        System.out.println( Arrays.toString( myArray ) );
     }
 }

@@ -19,7 +19,8 @@ import java.util.Arrays;
  */
 
 public class SelectionSort {
-    private static void selectionSort(int[] array){
+    public static void sort(int[] array){
+        if (array.length == 0) return;
         for(int i=0; i<array.length - 1;i++){
             int minIndex = i;
             for(int j=i + 1;j<array.length;j++){
@@ -31,31 +32,5 @@ public class SelectionSort {
                 array[minIndex] = temp;
             }
         }
-    }
-    public static void main(String[] args) {
-
-        // array demonstration
-        System.out.println("\n -------- Array demonstration of Selection Sort -------- \n");
-        int [] myArray = {4, 2, 6, 5, 1, 3};
-        System.out.print("\nBefore selection-sort : ");
-        System.out.println(Arrays.toString(myArray));
-        selectionSort(myArray);
-        System.out.print("\nAfter selection-sort  : ");
-        System.out.println(Arrays.toString(myArray));
-
-        // linked-list demonstration
-        System.out.println("\n -------- Linked-List demonstration of Selection Sort -------- \n");
-        LinkedList myLinkedList = new LinkedList(4);
-        myLinkedList.append(2);
-        myLinkedList.append(6);
-        myLinkedList.append(5);
-        myLinkedList.append(1);
-        myLinkedList.append(3);
-
-        System.out.println("Unsorted Linked List : ");
-        myLinkedList.printAll();
-        myLinkedList.selectionSort();
-        System.out.println("\nSorted Linked List   : ");
-        myLinkedList.printAll();
     }
 }

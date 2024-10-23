@@ -11,9 +11,6 @@ public abstract class Heap {
 
     public abstract void insert(int value);
     public abstract Integer remove();
-    public void printHeap(){
-        System.out.println("Heap : " + heap);
-    }
     protected static int leftChild(int index){
         return 2 * index + 1;
     }

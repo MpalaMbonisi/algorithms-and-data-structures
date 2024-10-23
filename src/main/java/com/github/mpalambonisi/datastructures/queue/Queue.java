@@ -51,6 +51,17 @@ public class Queue {
         length--;
         return dequeNode;
     }
+    public int[] toArray() {
+        Node temp = first;
+        int i = 0;
+        int[] array = new int[length];
+        while (temp != null) {
+            array[i] = temp.value;
+            temp = temp.next;
+            i++;
+        }
+        return array;
+    }
     public void printQueue() {
         Node temp = first;
         while (temp != null) {

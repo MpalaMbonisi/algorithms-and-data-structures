@@ -57,4 +57,20 @@ public class StackArrayList<T> {
         }
         return reversedString;
     }
+
+    public static boolean isBalancedParentheses(String str){
+        StackArrayList<Character> stack = new StackArrayList<>();
+        for (char c: str.toCharArray()
+        ) {
+            if (c == '('){
+                stack.push(c);
+            }
+            else if (c == ')'){
+                if (stack.isEmpty() || stack.pop() != '('){
+                    return false;
+                }
+            }
+        }
+        return stack.isEmpty();
+    }
 }

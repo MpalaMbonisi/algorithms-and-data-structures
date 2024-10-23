@@ -7,7 +7,7 @@ public class LinkedList {
     private Node tail;
     private int length;
 
-    class Node{
+    static class Node{
         int value;
         Node next;
         Node (int value){ // made the access mode Default because it's an inner-class
@@ -26,24 +26,12 @@ public class LinkedList {
         return head;
     }
 
-    public void setHead(Node head) {
-        this.head = head;
-    }
-
     public Node getTail() {
         return tail;
     }
 
-    public void setTail(Node tail) {
-        this.tail = tail;
-    }
-
     public int getLength() {
         return length;
-    }
-
-    public void setLength(int length) {
-        this.length = length;
     }
     public void makeEmpty() {
         head = null;
@@ -155,6 +143,45 @@ public class LinkedList {
         }
     }
 
+    public void printList(){
+        Node temp=head;
+        while(temp!=null){
+            System.out.print(temp.value + " - ");
+            temp = temp.next;
+        }
+        System.out.println();
+    }
+
+    public int[] toArray(){
+        Node temp=head;
+        int[] array = new int[length];
+        int i = 0;
+        while(temp!=null){
+            array[i] = temp.value;
+            temp = temp.next;
+            i++;
+        }
+        return array;
+    }
+
+    public void printAll(){
+        if(length == 0){
+            System.out.println("Head: null");
+            System.out.println("Tail: null");
+        }else{
+            System.out.println("Head: " + head.value);
+            System.out.println("Tail: " + tail.value);
+        }
+        System.out.println("Length: " + length);
+        System.out.println("\nLinked List: ");
+        if (length == 0){
+            System.out.println("empty");
+        }else{
+            printList();
+        }
+    }
+
+
     // implementation of Bubble-Sort Algorithm
     public void bubbleSort(){
         if (length < 2) return;
@@ -241,7 +268,7 @@ public class LinkedList {
         head = sortedListHead;
     }
 
-    // implemented a method that merges two LinkedLists
+    // implemented a method that merges two LinkedLists that are already sorted
     public void merge(LinkedList otherList){
         Node otherHead = otherList.getHead();
         Node dummy = new Node(0);
@@ -267,33 +294,6 @@ public class LinkedList {
         this.head = dummy.next;
         this.length += otherList.length;
     }
-
-    public void printList(){
-        Node temp=head;
-        while(temp!=null){
-            System.out.print(temp.value + " - ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
-    public void printAll(){
-        if(length == 0){
-            System.out.println("Head: null");
-            System.out.println("Tail: null");
-        }else{
-            System.out.println("Head: " + head.value);
-            System.out.println("Tail: " + tail.value);
-        }
-        System.out.println("Length: " + length);
-        System.out.println("\nLinked List: ");
-        if (length == 0){
-            System.out.println("empty");
-        }else{
-            printList();
-        }
-    }
-
     // Leetcode exercise questions
     public Node findMiddleNode(){
         if (head == null) return null;
@@ -325,6 +325,8 @@ public class LinkedList {
     // This algorithm uses two pointers, called 'slow' and 'fast'.
 
     public Node findKthFromEnd(int k){
+        if(k > length || k < 0) return null;
+
         Node fast = head;
         Node slow = head;
 

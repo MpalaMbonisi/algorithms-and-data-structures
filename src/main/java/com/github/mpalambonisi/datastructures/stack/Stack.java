@@ -37,13 +37,26 @@ public class Stack {
     }
     public Node pop(){
         Node poppedNode = top;
-        if (height == 0) top = null;
+        if (height == 0) {
+            return null;
+        }
         else if (height > 0){
             top = poppedNode.next;
             poppedNode.next = null;
         }
         height--;
         return poppedNode;
+    }
+    public int[] toArray(){
+        Node temp=top;
+        int[] array = new int[height];
+        int i = 0;
+        while(temp!=null){
+            array[i] = temp.value;
+            temp = temp.next;
+            i++;
+        }
+        return array;
     }
     public void printStack(){
         Node temp=top;
